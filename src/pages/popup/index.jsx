@@ -1,11 +1,12 @@
-import './index.sass';
+import './index.scss';
 
 import React from 'react';
-
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
 
 import Popup from './popup.jsx';
 
 const root = document.querySelector('#popup-container')
 
-createRoot(root).render(<Popup />)
+render(<Popup />, root)
+
+if (module.hot) module.hot.accept();

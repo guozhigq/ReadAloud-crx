@@ -1,0 +1,13 @@
+{
+  "name": "ReadAloud",
+  "version": "0.0.1",
+  "description": "ReadAloud chrome插件",
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-34.png"
+  },
+  "manifest_version": 3
+}

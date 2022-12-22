@@ -6,8 +6,10 @@
   "repository": "git@github.com:guozhigq/readAloud-crx.git",
   "author": "郭志斌 <zhibin.guo@niutron.com>",
   "license": "MIT",
-  "script": {
-    
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "node utils/build.js",
+    "start": "node utils/webserver.js"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^17.0.2",
