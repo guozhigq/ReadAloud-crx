@@ -1,3 +1,27 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 #popup-container{
-  background: #00021c;
+  overflow: hidden;
+  background: #fff;
+  width: 320px;
+  height: 500px;
+  border: 2px solid #f0f0f0;
+  box-sizing: border-box;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.flex-bw{
+  justify-content: space-between;
 }

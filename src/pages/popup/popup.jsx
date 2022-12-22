@@ -1,25 +1,94 @@
 import './popup.scss';
 
-import React from 'react';
+import React, { useState } from 'react';
+
+import {
+  Col,
+  Row,
+  Select,
+  Slider,
+  Switch,
+} from 'antd';
 
 const Popup = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/pages/Popup/Popup.jsx</code> and save to reload
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!
-        </a>
-      </header>
-    </div>
-  );
+    const [rateValue, setRateValue] = useState(1);
+    const [pitchValue, setPitchValue] = useState(1);
+    const rateMarks = {
+      0.5: "",
+      0.75: "",
+      1: "",
+      1.25: "",
+      1.5: "",
+      1.75: "",
+      2: "",
+    };
+    // 播放速度
+    const onRateChange = (newValue) => {
+      setRateValue(newValue);
+    };
+    // 音调
+    const onPitchChange = (newValue) => {
+      setPitchValue(newValue)
+    }
+    return (
+        <div className="popup-container">
+            <h3 className='popup-title'>大声朗读 - 文字转语音</h3>
+            <ul>
+                <li className="li-row">
+                    <p className='li-label'>选择语言(language)</p>
+                    <Select
+                        defaultValue="lucy"
+                        style={{
+                            width: '100%',
+                        }}
+                        bordered={false}
+                        options={[
+                            {
+                                value: "lucy",
+                                label: "Lucy",
+                            },
+                        ]}
+                    />
+                </li>
+                <li className="li-row">
+                    <p className="li-label flex flex-bw">
+                      <span>播放速度(rate)</span>
+                      <span> x{rateValue}</span>
+                    </p>
+                    <Row>
+                      <Col span={24}>
+                        <Slider
+                          min={0.5}
+                          max={2}
+                          step={0.25}
+                          marks={ rateMarks }
+                          onChange={onRateChange}
+                          value={typeof rateValue === 'number' ? rateValue : 0}
+                        />
+                      </Col>
+                    </Row>
+                </li>
+                <li className="li-row">
+                    <p className='li-label'>音调调整(pitch)</p>
+                    <Row>
+                      <Col span={24}>
+                        <Slider
+                          min={1}
+                          max={20}
+                          onChange={onPitchChange}
+                          value={typeof pitchValue === 'number' ? pitchValue : 0}
+                        />
+                      </Col>
+                    </Row>
+                </li>
+                <li>
+                    <p className='li-label'>开启录音(record)</p>
+                    <Switch checkedChildren="1" unCheckedChildren="0" />
+                </li>
+            </ul>
+            <p className="version-text">Version 0.01</p>
+        </div>
+    );
 };
 
 export default Popup;
