@@ -1,0 +1,10 @@
+{
+  "name": "read-aloud-crx",
+  "version": "1.0.0",
+  "description": "readAloud-crx",
+  "main": "index.js",
+  "repository": "git@github.com:guozhigq/readAloud-crx.git",
+  "author": "郭志斌 <zhibin.guo@niutron.com>",
+  "license": "MIT",
+  "private": false
+}
