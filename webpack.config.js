@@ -38,7 +38,13 @@ const options = {
     mode: process.env.NODE_ENV || "development",
     entry: {
         popup: path.join(__dirname, "src", "pages", "popup", "index.jsx"),
-        background: path.join(__dirname, 'src', 'pages', 'background', 'index.js'),
+        background: path.join(
+            __dirname,
+            "src",
+            "pages",
+            "background",
+            "index.js"
+        ),
     },
     output: {
         filename: "[name].bundle.js",
@@ -132,23 +138,23 @@ const options = {
             ],
         }),
         new CopyWebpackPlugin({
-          patterns: [
-              {
-                  from: "src/assets/img/icon-128.png",
-                  to: path.join(__dirname, "build"),
-                  force: true,
-              },
-          ],
-      }),
-      new CopyWebpackPlugin({
-          patterns: [
-              {
-                  from: "src/assets/img/icon-34.png",
-                  to: path.join(__dirname, "build"),
-                  force: true,
-              },
-          ],
-      }),
+            patterns: [
+                {
+                    from: "src/assets/img/icon-128.png",
+                    to: path.join(__dirname, "build"),
+                    force: true,
+                },
+            ],
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: "src/assets/img/icon-34.png",
+                    to: path.join(__dirname, "build"),
+                    force: true,
+                },
+            ],
+        }),
         new HtmlWebpackPlugin({
             template: path.join(
                 __dirname,
@@ -161,20 +167,20 @@ const options = {
             chunks: ["popup"],
             cache: false,
         }),
-    ]
+    ],
 };
 
 if (env.NODE_ENV === "development") {
-  options.devtool = "cheap-module-source-map";
+    options.devtool = "cheap-module-source-map";
 } else {
-  options.optimization = {
-      minimize: true,
-      minimizer: [
-          new TerserPlugin({
-              extractComments: false,
-          }),
-      ],
-  };
+    options.optimization = {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+            }),
+        ],
+    };
 }
 
 module.exports = options;

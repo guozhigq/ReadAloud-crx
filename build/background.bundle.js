@@ -936,15 +936,15 @@ Object.defineProperty(exports, "__esModule", ({value:true}));exports.fromCodePoi
   \***************************************/
 /***/ (() => {
 
-console.log("This is the background page.");
-console.log("Put the background scripts here.");
+console.log("[readAloud background] 💆‍♂️ This is the background page.");
+
+// 浏览器右键上下文添加事件
 chrome.contextMenus.create({
-  id: "some-command",
+  id: "some-command2",
   title: "朗读以下内容：%s",
   // %s表示选中的文字
-  contexts: ["all"] // 只有当选中文字时才会出现此右键菜单
+  contexts: ["all"]
 });
-
 chrome.contextMenus.onClicked.addListener(getword);
 function getword(info) {
   console.log(info.selectionText + " was clicked.");
@@ -3270,7 +3270,7 @@ module.exports.formatError = function (err) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("cebf2f43e6af3f2959e4")
+/******/ 		__webpack_require__.h = () => ("be01fd262c5eb71dad43")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

@@ -61359,13 +61359,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/@hot-loader/react-dom/index.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/config-provider/index.js");
 /* harmony import */ var _popup_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popup.jsx */ "./src/pages/popup/popup.jsx");
 
 
 
 
-var root = document.querySelector('#popup-container');
-(0,react_dom__WEBPACK_IMPORTED_MODULE_2__.render)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_popup_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null), root);
+
+var App = function App() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(antd__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    theme: {
+      token: {
+        colorPrimary: "#444"
+      }
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_popup_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+};
+var root = document.querySelector("#popup-container");
+(0,react_dom__WEBPACK_IMPORTED_MODULE_2__.render)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(App, null), root);
 if (true) module.hot.accept();
 
 /***/ }),
@@ -61399,6 +61410,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Popup = function Popup() {
+  console.log("[readAloud] Popup");
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
     _useState2 = _slicedToArray(_useState, 2),
     rateValue = _useState2[0],
@@ -61407,11 +61419,16 @@ var Popup = function Popup() {
     _useState4 = _slicedToArray(_useState3, 2),
     pitchValue = _useState4[0],
     setPitchValue = _useState4[1];
-  // chrome.tabs.executeScript( {
-  //   code: "window.getSelection().toString();"
-  // }, function(selection) {
-  //   console.log(selection)
-  // });
+  // 当前语言
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("zh-cn"),
+    _useState6 = _slicedToArray(_useState5, 2),
+    langValue = _useState6[0],
+    setLangValue = _useState6[1];
+  // 所有语言项
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+    _useState8 = _slicedToArray(_useState7, 2),
+    langOptions = _useState8[0],
+    setLangOptions = _useState8[1];
   // 播放速度
   var onRateChange = function onRateChange(newValue) {
     setRateValue(newValue);
@@ -61420,6 +61437,39 @@ var Popup = function Popup() {
   var onPitchChange = function onPitchChange(newValue) {
     setPitchValue(newValue);
   };
+  // 语言
+  var onLanguageChange = function onLanguageChange(newValue) {
+    setLangValue(newValue);
+    chrome.storage.local.set({
+      langValue: newValue
+    });
+  };
+  var fieldNames = {
+    label: "name",
+    value: "name",
+    options: "options"
+  };
+  // 读取缓存
+  chrome.storage.local.get(function (items) {
+    console.log("local get", items);
+    setLangValue(items.langValue);
+    console.log("local get langValue", langValue);
+  });
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (typeof speechSynthesis === "undefined" || langOptions.length >= 1) {
+      return;
+    }
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        var voices = speechSynthesis.getVoices();
+        resolve(voices);
+      }, 0);
+    }).then(function (voices) {
+      console.log(voices);
+      setLangOptions(voices);
+      setLangValue(voices[0].name);
+    });
+  });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "popup-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h3", {
@@ -61429,15 +61479,14 @@ var Popup = function Popup() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", {
     className: "li-label"
   }, "\u9009\u62E9\u8BED\u8A00(language)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(antd__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    defaultValue: "lucy",
+    onChange: onLanguageChange,
+    defaultValue: langValue,
     style: {
-      width: '100%'
+      width: "100%"
     },
+    fieldNames: fieldNames,
     bordered: false,
-    options: [{
-      value: "lucy",
-      label: "Lucy"
-    }]
+    options: langOptions
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", {
     className: "li-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", {
@@ -61449,7 +61498,7 @@ var Popup = function Popup() {
     max: 2,
     step: 0.25,
     onChange: onRateChange,
-    value: typeof rateValue === 'number' ? rateValue : 0
+    value: typeof rateValue === "number" ? rateValue : 0
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", {
     className: "li-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", {
@@ -61460,7 +61509,7 @@ var Popup = function Popup() {
     min: 1,
     max: 20,
     onChange: onPitchChange,
-    value: typeof pitchValue === 'number' ? pitchValue : 0
+    value: typeof pitchValue === "number" ? pitchValue : 0
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", {
     className: "li-label"
   }, "\u5F00\u542F\u5F55\u97F3(record)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(antd__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -66151,7 +66200,7 @@ function combine (array, callback) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("cebf2f43e6af3f2959e4")
+/******/ 		__webpack_require__.h = () => ("be01fd262c5eb71dad43")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
