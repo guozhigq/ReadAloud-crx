@@ -38739,7 +38739,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  list-style: none; }\n\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\n#popup-container {\n  overflow: hidden;\n  background: #fff;\n  width: 320px;\n  height: 500px;\n  border: 2px solid #f0f0f0;\n  box-sizing: border-box; }\n\n.flex {\n  display: flex;\n  align-items: center; }\n\n.flex-bw {\n  justify-content: space-between; }\n", "",{"version":3,"sources":["webpack://./src/pages/popup/index.scss"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,SAAS;EACT,gBAAgB,EAAA;;AAElB;EACE,8JAEY;EACZ,mCAAmC;EACnC,kCAAkC,EAAA;;AAEpC;EACE,gBAAgB;EAChB,gBAAgB;EAChB,YAAY;EACZ,aAAa;EACb,yBAAyB;EACzB,sBAAsB,EAAA;;AAExB;EACE,aAAa;EACb,mBAAmB,EAAA;;AAErB;EACE,8BAA8B,EAAA","sourcesContent":["*{\n  padding: 0;\n  margin: 0;\n  list-style: none;\n}\nbody{\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n#popup-container{\n  overflow: hidden;\n  background: #fff;\n  width: 320px;\n  height: 500px;\n  border: 2px solid #f0f0f0;\n  box-sizing: border-box;\n}\n.flex{\n  display: flex;\n  align-items: center;\n}\n.flex-bw{\n  justify-content: space-between;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  list-style: none; }\n\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale; }\n\n#popup-container {\n  overflow: hidden;\n  background: #fff;\n  width: 320px;\n  height: 480px;\n  border: 2px solid #f0f0f0;\n  box-sizing: border-box; }\n\n.flex {\n  display: flex;\n  align-items: center; }\n\n.flex-bw {\n  justify-content: space-between; }\n", "",{"version":3,"sources":["webpack://./src/pages/popup/index.scss"],"names":[],"mappings":"AAAA;EACE,UAAU;EACV,SAAS;EACT,gBAAgB,EAAA;;AAElB;EACE,8JAEY;EACZ,mCAAmC;EACnC,kCAAkC,EAAA;;AAEpC;EACE,gBAAgB;EAChB,gBAAgB;EAChB,YAAY;EACZ,aAAY;EACZ,yBAAyB;EACzB,sBAAsB,EAAA;;AAExB;EACE,aAAa;EACb,mBAAmB,EAAA;;AAErB;EACE,8BAA8B,EAAA","sourcesContent":["*{\n  padding: 0;\n  margin: 0;\n  list-style: none;\n}\nbody{\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n#popup-container{\n  overflow: hidden;\n  background: #fff;\n  width: 320px;\n  height:480px;\n  border: 2px solid #f0f0f0;\n  box-sizing: border-box;\n}\n.flex{\n  display: flex;\n  align-items: center;\n}\n.flex-bw{\n  justify-content: space-between;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -38766,7 +38766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".popup-container {\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  padding: 30px 20px 10px;\n  font-size: 15px; }\n  .popup-container .popup-title {\n    margin-bottom: 20px; }\n  .popup-container .li-row {\n    position: relative;\n    padding-bottom: 20px;\n    margin-bottom: 20px; }\n    .popup-container .li-row:last-child {\n      margin-bottom: 0; }\n    .popup-container .li-row::after {\n      position: absolute;\n      content: '';\n      bottom: 0;\n      left: 0;\n      right: 0;\n      height: 1px;\n      background-color: #f0f0f0; }\n  .popup-container .li-label {\n    color: #333;\n    flex-shrink: 0;\n    font-weight: 500;\n    margin-bottom: 10px; }\n  .popup-container .version-text {\n    margin-top: 25px;\n    text-align: center;\n    font-size: 13px;\n    color: #888; }\n", "",{"version":3,"sources":["webpack://./src/pages/popup/popup.scss"],"names":[],"mappings":"AAAA;EACE,WAAW;EACX,YAAY;EACZ,sBAAsB;EACtB,uBAAuB;EACvB,eAAe,EAAA;EALjB;IAOI,mBAAmB,EAAA;EAPvB;IAUI,kBAAkB;IAClB,oBAAoB;IACpB,mBAAmB,EAAA;IAZvB;MAcM,gBAAgB,EAAA;IAdtB;MAiBM,kBAAkB;MAClB,WAAW;MACX,SAAS;MACT,OAAO;MACP,QAAQ;MACR,WAAW;MACX,yBAAyB,EAAA;EAvB/B;IA2BI,WAAW;IACX,cAAc;IACd,gBAAgB;IAChB,mBAAmB,EAAA;EA9BvB;IAiCI,gBAAgB;IAChB,kBAAkB;IAClB,eAAe;IACf,WAAW,EAAA","sourcesContent":[".popup-container{\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  padding: 30px 20px 10px;\n  font-size: 15px;\n  .popup-title{\n    margin-bottom: 20px;\n  }\n  .li-row{\n    position: relative;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    &:last-child{\n      margin-bottom: 0;\n    }\n    &::after{\n      position: absolute;\n      content: '';\n      bottom: 0;\n      left: 0;\n      right: 0;\n      height: 1px;\n      background-color: #f0f0f0;\n    }\n  }\n  .li-label{\n    color: #333;\n    flex-shrink: 0;\n    font-weight: 500;\n    margin-bottom: 10px;\n  }\n  .version-text{\n    margin-top: 25px;\n    text-align: center;\n    font-size: 13px;\n    color: #888;\n  }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".popup-container {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  padding: 30px 20px 10px;\n  font-size: 13px; }\n  .popup-container .popup-title {\n    margin-bottom: 30px; }\n  .popup-container .li-row {\n    position: relative;\n    padding-bottom: 10px;\n    margin-bottom: 20px; }\n    .popup-container .li-row:last-child {\n      margin-bottom: 0; }\n    .popup-container .li-row::after {\n      position: absolute;\n      content: '';\n      bottom: 0;\n      left: 0;\n      right: 0;\n      height: 1px;\n      background-color: #f0f0f0; }\n  .popup-container .li-label {\n    color: #333;\n    flex-shrink: 0;\n    font-weight: 500;\n    margin-bottom: 8px; }\n  .popup-container .version-text {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 20px;\n    text-align: center;\n    font-size: 12px;\n    color: #888; }\n", "",{"version":3,"sources":["webpack://./src/pages/popup/popup.scss"],"names":[],"mappings":"AAAA;EACE,kBAAkB;EAClB,WAAW;EACX,YAAY;EACZ,sBAAsB;EACtB,uBAAuB;EACvB,eAAe,EAAA;EANjB;IAQI,mBAAmB,EAAA;EARvB;IAWI,kBAAkB;IAClB,oBAAoB;IACpB,mBAAmB,EAAA;IAbvB;MAeM,gBAAgB,EAAA;IAftB;MAkBM,kBAAkB;MAClB,WAAW;MACX,SAAS;MACT,OAAO;MACP,QAAQ;MACR,WAAW;MACX,yBAAyB,EAAA;EAxB/B;IA4BI,WAAW;IACX,cAAc;IACd,gBAAgB;IAChB,kBAAkB,EAAA;EA/BtB;IAkCI,kBAAkB;IAClB,SAAS;IACT,2BAA2B;IAC3B,YAAY;IACZ,kBAAkB;IAClB,eAAe;IACf,WAAW,EAAA","sourcesContent":[".popup-container{\n  position: relative;\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  padding: 30px 20px 10px;\n  font-size: 13px;\n  .popup-title{\n    margin-bottom: 30px;\n  }\n  .li-row{\n    position: relative;\n    padding-bottom: 10px;\n    margin-bottom: 20px;\n    &:last-child{\n      margin-bottom: 0;\n    }\n    &::after{\n      position: absolute;\n      content: '';\n      bottom: 0;\n      left: 0;\n      right: 0;\n      height: 1px;\n      background-color: #f0f0f0;\n    }\n  }\n  .li-label{\n    color: #333;\n    flex-shrink: 0;\n    font-weight: 500;\n    margin-bottom: 8px;\n  }\n  .version-text{\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 20px;\n    text-align: center;\n    font-size: 12px;\n    color: #888;\n  }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -61407,15 +61407,11 @@ var Popup = function Popup() {
     _useState4 = _slicedToArray(_useState3, 2),
     pitchValue = _useState4[0],
     setPitchValue = _useState4[1];
-  var rateMarks = {
-    0.5: "",
-    0.75: "",
-    1: "",
-    1.25: "",
-    1.5: "",
-    1.75: "",
-    2: ""
-  };
+  // chrome.tabs.executeScript( {
+  //   code: "window.getSelection().toString();"
+  // }, function(selection) {
+  //   console.log(selection)
+  // });
   // 播放速度
   var onRateChange = function onRateChange(newValue) {
     setRateValue(newValue);
@@ -61452,7 +61448,6 @@ var Popup = function Popup() {
     min: 0.5,
     max: 2,
     step: 0.25,
-    marks: rateMarks,
     onChange: onRateChange,
     value: typeof rateValue === 'number' ? rateValue : 0
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("li", {
@@ -66156,7 +66151,7 @@ function combine (array, callback) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("a837e053a530161f6ec0")
+/******/ 		__webpack_require__.h = () => ("cebf2f43e6af3f2959e4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

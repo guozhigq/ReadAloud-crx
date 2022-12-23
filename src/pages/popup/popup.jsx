@@ -13,15 +13,11 @@ import {
 const Popup = () => {
     const [rateValue, setRateValue] = useState(1);
     const [pitchValue, setPitchValue] = useState(1);
-    const rateMarks = {
-      0.5: "",
-      0.75: "",
-      1: "",
-      1.25: "",
-      1.5: "",
-      1.75: "",
-      2: "",
-    };
+    // chrome.tabs.executeScript( {
+    //   code: "window.getSelection().toString();"
+    // }, function(selection) {
+    //   console.log(selection)
+    // });
     // 播放速度
     const onRateChange = (newValue) => {
       setRateValue(newValue);
@@ -61,7 +57,6 @@ const Popup = () => {
                           min={0.5}
                           max={2}
                           step={0.25}
-                          marks={ rateMarks }
                           onChange={onRateChange}
                           value={typeof rateValue === 'number' ? rateValue : 0}
                         />
