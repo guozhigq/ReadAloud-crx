@@ -61409,18 +61409,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Popup = function Popup() {
+var Popup = function Popup(props) {
   console.log("[readAloud] Popup");
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1.0),
     _useState2 = _slicedToArray(_useState, 2),
     rateValue = _useState2[0],
     setRateValue = _useState2[1];
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1.0),
     _useState4 = _slicedToArray(_useState3, 2),
     pitchValue = _useState4[0],
     setPitchValue = _useState4[1];
   // 当前语言
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("zh-cn"),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("zh-CN"),
     _useState6 = _slicedToArray(_useState5, 2),
     langValue = _useState6[0],
     setLangValue = _useState6[1];
@@ -61449,7 +61449,8 @@ var Popup = function Popup() {
     value: "name",
     options: "options"
   };
-  // 读取缓存
+
+  // 从缓存中读取已选语言
   chrome.storage.local.get(function (items) {
     console.log("local get", items);
     setLangValue(items.langValue);
@@ -61465,9 +61466,9 @@ var Popup = function Popup() {
         resolve(voices);
       }, 0);
     }).then(function (voices) {
-      console.log(voices);
+      var _voices$;
       setLangOptions(voices);
-      setLangValue(voices[0].name);
+      setLangValue((_voices$ = voices[0]) === null || _voices$ === void 0 ? void 0 : _voices$.name);
     });
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
@@ -61495,7 +61496,7 @@ var Popup = function Popup() {
     span: 24
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(antd__WEBPACK_IMPORTED_MODULE_5__["default"], {
     min: 0.5,
-    max: 2,
+    max: 2.0,
     step: 0.25,
     onChange: onRateChange,
     value: typeof rateValue === "number" ? rateValue : 0
@@ -66189,18 +66190,18 @@ function combine (array, callback) {
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.hu = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "." + __webpack_require__.h() + ".hot-update.js";
+/******/ 			return "hot/" + chunkId + "." + __webpack_require__.h() + ".hot-update.js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/get update manifest filename */
 /******/ 	(() => {
-/******/ 		__webpack_require__.hmrF = () => ("popup." + __webpack_require__.h() + ".hot-update.json");
+/******/ 		__webpack_require__.hmrF = () => ("hot/popup." + __webpack_require__.h() + ".hot-update.json");
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("be01fd262c5eb71dad43")
+/******/ 		__webpack_require__.h = () => ("052b5fa1df6b9ccfe2f7")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

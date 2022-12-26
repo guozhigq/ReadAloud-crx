@@ -51,6 +51,8 @@ const options = {
         path: path.resolve(__dirname, "build"),
         clean: true,
         publicPath: ASSET_PATH,
+        hotUpdateChunkFilename: "hot/[name].[fullhash].hot-update.js",
+        hotUpdateMainFilename: "hot/[runtime].[fullhash].hot-update.json",
     },
     module: {
         rules: [

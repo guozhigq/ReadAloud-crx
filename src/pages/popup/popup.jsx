@@ -13,13 +13,13 @@ import {
   Switch,
 } from 'antd';
 
-const Popup = () => {
+const Popup = (props) => {
     console.log("[readAloud] Popup");
 
-    const [rateValue, setRateValue] = useState(1);
-    const [pitchValue, setPitchValue] = useState(1);
+    const [rateValue, setRateValue] = useState(1.0);
+    const [pitchValue, setPitchValue] = useState(1.0);
     // 当前语言
-    const [langValue, setLangValue] = useState("zh-cn");
+    const [langValue, setLangValue] = useState("zh-CN");
     // 所有语言项
     const [langOptions, setLangOptions] = useState([]);
     // 播放速度
@@ -37,7 +37,8 @@ const Popup = () => {
     };
 
     const fieldNames = { label: "name", value: "name", options: "options" };
-    // 读取缓存
+
+    // 从缓存中读取已选语言
     chrome.storage.local.get((items) => {
         console.log("local get", items);
         setLangValue(items.langValue);
@@ -54,9 +55,8 @@ const Popup = () => {
                 resolve(voices);
             }, 0);
         }).then((voices) => {
-            console.log(voices);
             setLangOptions(voices);
-            setLangValue(voices[0].name)
+            setLangValue(voices[0]?.name);
         });
     });
 
@@ -86,7 +86,7 @@ const Popup = () => {
                         <Col span={24}>
                             <Slider
                                 min={0.5}
-                                max={2}
+                                max={2.0}
                                 step={0.25}
                                 onChange={onRateChange}
                                 value={
